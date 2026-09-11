@@ -1,0 +1,494 @@
+/* ==========================================================================
+   NullOS Responsive & Hardware-Adaptive Stylesheet
+   Optimized for Every Device Specification:
+   - Low-spec / Battery Saver hardware (No heavy blurs, reduced GPU fillrate)
+   - High-performance / Ultra-spec workstations (120Hz, crisp shadows)
+   - Touchscreens (Smartphones, Tablets, Touch Laptops)
+   - High-DPI / Retina displays
+   - Mobile screens (<480px, 480px-640px)
+   - Tablets (640px-1024px)
+   - Standard Laptops & Desktops (1024px-1920px)
+   - 4K & Ultra-wide Workstations (>1920px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. PERFORMANCE TIER: LOW-SPEC / BATTERY-SAVER OVERRIDES
+   -------------------------------------------------------------------------- */
+body.perf-tier-low,
+body.no-blur {
+  /* Replace expensive GPU backdrop blurs with clean, solid acrylics */
+  --bg-acrylic: #16191e !important;
+  --bg-acrylic-heavy: #121418 !important;
+  --bg-acrylic-light: #1b1e24 !important;
+  
+  /* Simplify box shadows to single crisp borders to save GPU compositor passes */
+  --shadow-window: 0 4px 12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+  --shadow-flyout: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.12) !important;
+  --shadow-dialog: 0 8px 24px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15) !important;
+}
+
+body.perf-tier-low .taskbar,
+body.perf-tier-low .start-menu-panel,
+body.perf-tier-low .quick-settings-panel,
+body.perf-tier-low .calendar-flyout-panel,
+body.perf-tier-low .context-menu,
+body.perf-tier-low .lock-container,
+body.no-blur .taskbar,
+body.no-blur .start-menu-panel,
+body.no-blur .quick-settings-panel,
+body.no-blur .calendar-flyout-panel,
+body.no-blur .context-menu,
+body.no-blur .lock-container {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Reduced Motion / Low Spec Animation Elimination */
+body.perf-tier-low .os-window,
+body.perf-tier-low .start-menu-panel,
+body.perf-tier-low .quick-settings-panel,
+body.perf-tier-low .calendar-flyout-panel {
+  animation: none !important;
+  transition: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Background Throttling Visual Marker */
+body.page-hidden * {
+  animation-play-state: paused !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. TOUCH SCREEN ADAPTABILITY
+   -------------------------------------------------------------------------- */
+body.device-touch .window-header {
+  touch-action: none !important;
+  height: 38px;
+}
+
+body.device-touch .window-btn {
+  width: 48px;
+  height: 100%;
+}
+
+body.device-touch .resize-handle {
+  touch-action: none !important;
+}
+
+body.device-touch .resize-n,
+body.device-touch .resize-s {
+  height: 14px;
+}
+
+body.device-touch .resize-w,
+body.device-touch .resize-e {
+  width: 14px;
+}
+
+body.device-touch .resize-nw,
+body.device-touch .resize-ne,
+body.device-touch .resize-sw,
+body.device-touch .resize-se {
+  width: 20px;
+  height: 20px;
+}
+
+body.device-touch .taskbar-item {
+  width: 44px;
+  height: 38px;
+}
+
+body.device-touch .start-app-item {
+  padding: 12px 6px;
+}
+
+/* Smooth Touch Scrolling */
+.window-content,
+.start-content,
+.settings-content,
+.appstore-content,
+.browser-tabs-container,
+.fm-main,
+.sec-body {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE PHONES (SCREEN WIDTH < 640px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  /* Taskbar adjustments */
+  .taskbar {
+    padding: 0 2px;
+    height: 46px;
+  }
+
+  .taskbar-search-btn {
+    padding: 0 8px;
+    margin-right: 2px;
+  }
+
+  .taskbar-search-btn span {
+    display: none;
+  }
+
+  .taskbar-apps-container {
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: calc(100vw - 120px);
+  }
+
+  .taskbar-apps-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tray-clock-date {
+    display: none;
+  }
+
+  .tray-clock {
+    padding: 0 4px;
+  }
+
+  .tray-group {
+    padding: 0 4px;
+    gap: 4px;
+  }
+
+  .taskbar-peek {
+    display: none;
+  }
+
+  /* Start Menu */
+  .start-menu-panel {
+    width: calc(100vw - 12px) !important;
+    left: 6px !important;
+    right: 6px !important;
+    bottom: calc(var(--taskbar-height) + 6px) !important;
+    max-height: calc(100vh - var(--taskbar-height) - 12px) !important;
+    max-height: calc(100dvh - var(--taskbar-height) - 12px) !important;
+    height: auto !important;
+  }
+
+  .start-search-box {
+    padding: 16px 16px 8px;
+  }
+
+  .start-content {
+    padding: 4px 16px 12px;
+    gap: 14px;
+    max-height: calc(100vh - var(--taskbar-height) - 140px);
+    max-height: calc(100dvh - var(--taskbar-height) - 140px);
+    overflow-y: auto;
+  }
+
+  .start-apps-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px 4px;
+  }
+
+  .start-footer {
+    padding: 0 16px;
+    height: 48px;
+  }
+
+  /* Quick Settings & Calendar Panels */
+  .quick-settings-panel,
+  .calendar-flyout-panel {
+    width: calc(100vw - 12px) !important;
+    left: 6px !important;
+    right: 6px !important;
+    bottom: calc(var(--taskbar-height) + 6px) !important;
+    max-height: calc(100vh - var(--taskbar-height) - 12px);
+    max-height: calc(100dvh - var(--taskbar-height) - 12px);
+    overflow-y: auto;
+  }
+
+  /* Lock Screen */
+  .lock-container {
+    padding: 24px 16px 16px;
+  }
+
+  .lock-clock-section {
+    margin-top: 10px;
+  }
+
+  .lock-time {
+    font-size: clamp(40px, 12vw, 64px);
+  }
+
+  .lock-date {
+    font-size: 14px;
+  }
+
+  .lock-avatar {
+    width: 72px;
+    height: 72px;
+  }
+
+  /* Windows - Automatically full viewport on mobile */
+  .os-window {
+    min-width: 280px;
+    min-height: 200px;
+  }
+
+  .os-window.maximized {
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - var(--taskbar-height)) !important;
+  }
+
+  /* Desktop Grid */
+  .desktop-grid {
+    padding: 8px 6px;
+    gap: 4px;
+  }
+
+  .desktop-icon {
+    width: 70px;
+    height: 76px;
+    padding: 4px 2px;
+  }
+
+  .desktop-icon-svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .desktop-icon-label {
+    font-size: 10px;
+  }
+
+  /* --- App Store Mobile --- */
+  .store-topbar {
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .store-nav-tabs {
+    overflow-x: auto;
+    width: 100%;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+
+  .store-nav-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .store-tab-btn {
+    padding: 0 10px;
+    font-size: 12px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .store-search-wrap {
+    width: 100%;
+  }
+
+  .store-score-badge {
+    display: none;
+  }
+
+  .store-apps-grid,
+  .store-category-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  /* --- Settings Mobile --- */
+  .settings-window {
+    flex-direction: column;
+  }
+
+  .settings-sidebar {
+    width: 100% !important;
+    height: auto !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-divider) !important;
+    padding: 6px 8px !important;
+    gap: 6px !important;
+    scrollbar-width: none;
+  }
+
+  .settings-sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .settings-nav-item {
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0 10px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .settings-content {
+    padding: 16px 14px !important;
+    gap: 14px;
+  }
+
+  .settings-card {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+
+  /* --- System Monitor Mobile --- */
+  .sysmon-metrics-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  .sysmon-load-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sysmon-card {
+    padding: 12px;
+  }
+
+  .sysmon-table-wrap {
+    overflow-x: auto;
+  }
+
+  /* --- Security Center Mobile --- */
+  .sec-grid,
+  .sec-cards-container {
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+  }
+
+  .sec-scan-actions {
+    flex-direction: column;
+  }
+
+  .sec-scan-btn {
+    width: 100%;
+  }
+
+  /* --- File Manager Mobile --- */
+  .fm-toolbar {
+    padding: 0 6px;
+    gap: 4px;
+  }
+
+  .fm-search-bar {
+    width: 100px;
+  }
+
+  .fm-sidebar {
+    width: 50px !important;
+    padding: 6px 2px;
+  }
+
+  .fm-sidebar span {
+    display: none;
+  }
+
+  /* --- Calculator Mobile --- */
+  .calc-window {
+    min-width: 260px;
+  }
+
+  .calc-key {
+    min-height: 44px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. TABLETS (SCREEN WIDTH 641px - 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .start-apps-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .store-apps-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+
+  .sysmon-metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .settings-sidebar {
+    width: 180px;
+  }
+
+  .settings-content {
+    padding: 20px 24px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. ULTRA-WIDE & 4K WORKSTATIONS (> 1920px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1921px) {
+  :root {
+    --taskbar-height: 50px;
+    --header-height: 38px;
+  }
+
+  .desktop-grid {
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .desktop-icon {
+    width: 96px;
+    height: 102px;
+  }
+
+  .desktop-icon-svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .desktop-icon-label {
+    font-size: 12px;
+  }
+
+  .taskbar-item {
+    width: 46px;
+    height: 40px;
+  }
+
+  .start-menu-panel {
+    width: 580px;
+    height: 620px;
+  }
+
+  .start-apps-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px 10px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. HIGH-DPI / RETINA DISPLAY CRISPNESS
+   -------------------------------------------------------------------------- */
+body.device-retina svg {
+  shape-rendering: geometricPrecision;
+}
+
+body.device-retina {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>NullOS — Enterprise Desktop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/styles/reset.css">
+  <link rel="stylesheet" href="/src/styles/variables.css">
+  <link rel="stylesheet" href="/src/styles/components.css">
+  <link rel="stylesheet" href="/src/styles/desktop.css">
+  <link rel="stylesheet" href="/src/styles/windows.css">
+  <link rel="stylesheet" href="/src/styles/taskbar.css">
+  <link rel="stylesheet" href="/src/styles/apps.css">
+  <link rel="stylesheet" href="/src/styles/appstore.css">
+  <link rel="stylesheet" href="/src/styles/responsive.css">
+</head>
+<body class="theme-dark">
+  <div id="os-root">
+    <!-- Boot Screen -->
+    <div id="boot-screen" class="os-screen active"></div>
+
+    <!-- Lock / Login Screen -->
+    <div id="lock-screen" class="os-screen"></div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop-environment" class="os-screen">
+      <!-- Wallpaper Canvas / Layer -->
+      <div id="wallpaper-layer" class="wallpaper-aizen"></div>
+
+      <!-- Desktop Icons Container -->
+      <div id="desktop-grid" class="desktop-grid"></div>
+
+      <!-- Window Stacking Workspace -->
+      <div id="window-workspace" class="window-workspace"></div>
+
+      <!-- Notifications Layer -->
+      <div id="notification-container" class="notification-container"></div>
+
+      <!-- Taskbar -->
+      <div id="taskbar" class="taskbar"></div>
+
+      <!-- Start Menu Popup -->
+      <div id="start-menu" class="start-menu-panel hidden"></div>
+
+      <!-- Quick Settings / Action Center -->
+      <div id="quick-settings" class="quick-settings-panel hidden"></div>
+
+      <!-- Notification Center / Calendar -->
+      <div id="calendar-flyout" class="calendar-flyout-panel hidden"></div>
+
+      <!-- Context Menu -->
+      <div id="context-menu" class="context-menu hidden"></div>
+
+      <!-- Screen Dimmer for Modal Dialogs -->
+      <div id="modal-container" class="modal-container hidden"></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

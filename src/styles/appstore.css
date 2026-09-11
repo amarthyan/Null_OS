@@ -1,0 +1,431 @@
+/* ==========================================================================
+   USELESS APP STORE STYLES
+   ========================================================================== */
+
+.appstore-window {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--surface-window);
+  color: var(--text-primary);
+  overflow: hidden;
+}
+
+/* Store Navigation Bar */
+.store-topbar {
+  height: 52px;
+  background: var(--surface-header);
+  border-bottom: 1px solid var(--border-divider);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.store-nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+}
+
+.store-tab-btn {
+  height: 34px;
+  padding: 0 14px;
+  border-radius: var(--radius-button);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all var(--anim-fast);
+  cursor: default;
+}
+
+.store-tab-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.store-tab-btn.active {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.store-search-wrap {
+  position: relative;
+  width: 260px;
+  display: flex;
+  align-items: center;
+}
+
+.store-search-wrap svg {
+  position: absolute;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  color: var(--text-muted);
+}
+
+.store-search-input {
+  width: 100%;
+  height: 32px;
+  background: var(--surface-input);
+  border: 1px solid var(--border-strong);
+  border-radius: 16px;
+  padding: 0 12px 0 32px;
+  font-size: 12px;
+  color: #ffffff;
+  transition: all var(--anim-fast);
+}
+
+.store-search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-subtle);
+}
+
+.store-score-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 120, 212, 0.1);
+  border: 1px solid var(--accent-border);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 11px;
+}
+
+/* Store Content Body */
+.store-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Featured Hero Banner */
+.store-hero-card {
+  height: 200px;
+  border-radius: var(--radius-window);
+  background: linear-gradient(135deg, #1f2c3f 0%, #151d2a 60%, #0f131a 100%);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding: 24px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.store-hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 480px;
+  z-index: 2;
+}
+
+.store-hero-badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+.store-hero-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+}
+
+.store-hero-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.store-hero-icon-visual {
+  font-size: 96px;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.6));
+  z-index: 2;
+}
+
+/* Section Header */
+.store-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* App Cards Grid */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.store-app-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: all var(--anim-fast);
+  cursor: default;
+}
+
+.store-app-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.store-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.store-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  border: 1px solid var(--border-subtle);
+  flex-shrink: 0;
+}
+
+.store-card-meta {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.store-card-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.store-card-cat {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.store-card-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 32px;
+}
+
+.store-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
+  border-top: 1px solid var(--border-divider);
+}
+
+.store-card-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.store-btn-get {
+  height: 28px;
+  padding: 0 16px;
+  border-radius: 14px;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--anim-fast);
+}
+
+.store-btn-get:hover {
+  background: var(--accent-hover);
+}
+
+.store-btn-get.open {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  border: 1px solid var(--border-strong);
+}
+
+/* App Detail Page */
+.store-detail-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.store-detail-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--accent);
+  cursor: default;
+  align-self: flex-start;
+}
+
+.store-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--surface-card);
+  padding: 20px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--border-subtle);
+}
+
+.store-detail-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44px;
+  flex-shrink: 0;
+}
+
+.store-detail-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.store-detail-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.store-detail-dev {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+.store-detail-stats {
+  display: flex;
+  gap: 20px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+/* Install Progress Box */
+.store-install-box {
+  background: rgba(0, 120, 212, 0.1);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-card);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.store-progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.store-progress-fill {
+  height: 100%;
+  background: var(--accent);
+  transition: width 150ms ease;
+}
+
+/* Screenshots Preview */
+.store-preview-box {
+  height: 180px;
+  border-radius: var(--radius-card);
+  background: #0e1116;
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Reviews List */
+.store-reviews-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.store-review-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-card);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.store-review-card.own-review {
+  background: rgba(0, 120, 212, 0.08);
+  border-color: rgba(0, 120, 212, 0.3);
+}
+
+.review-helpful-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: var(--text-primary) !important;
+}
+
+.review-helpful-btn.voted {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+  pointer-events: none;
+}
+
+.review-helpful-btn svg {
+  width: 12px;
+  height: 12px;
+}
+

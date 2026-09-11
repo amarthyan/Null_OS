@@ -1,0 +1,364 @@
+#os-root {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  position: relative;
+  overflow: hidden;
+}
+
+.os-screen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  opacity: 0;
+  transition: opacity var(--anim-normal);
+}
+
+.os-screen.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   BOOT SCREEN
+   ========================================================================== */
+#boot-screen {
+  background-color: #000000;
+  color: #ffffff;
+  z-index: 99999;
+}
+
+.boot-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+}
+
+.boot-logo-svg {
+  width: 80px;
+  height: 80px;
+  color: #ffffff;
+}
+
+.boot-spinner-ring {
+  width: 38px;
+  height: 38px;
+  border: 3px solid rgba(255, 255, 255, 0.12);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: boot-spin 0.9s linear infinite;
+}
+
+@keyframes boot-spin {
+  to { transform: rotate(360deg); }
+}
+
+.boot-status-text {
+  font-size: 13px;
+  color: #8a909d;
+  letter-spacing: 0.2px;
+  height: 20px;
+  font-family: var(--font-sans);
+}
+
+.boot-skip-hint {
+  position: absolute;
+  bottom: 24px;
+  font-size: 11px;
+  color: #444a54;
+}
+
+/* ==========================================================================
+   LOCK / LOGIN SCREEN
+   ========================================================================== */
+#lock-screen {
+  background: radial-gradient(circle at 50% 30%, #1c232d 0%, #0c0f14 100%);
+  z-index: 9999;
+  background-size: cover;
+  background-position: center;
+}
+
+.lock-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px 30px;
+  backdrop-filter: blur(30px);
+  background: rgba(10, 12, 16, 0.45);
+}
+
+.lock-clock-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.lock-time {
+  font-size: 80px;
+  font-weight: 300;
+  letter-spacing: -2px;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.lock-date {
+  font-size: 18px;
+  font-weight: 400;
+  color: #c4cad4;
+  margin-top: 10px;
+}
+
+.lock-user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 280px;
+}
+
+.lock-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #252b36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+.lock-username {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.lock-password-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lock-input-group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.lock-input {
+  width: 100%;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-input);
+  padding: 0 40px 0 12px;
+  color: #ffffff;
+  font-size: 13px;
+  transition: all var(--anim-fast);
+}
+
+.lock-input:focus {
+  background: rgba(0, 0, 0, 0.5);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-subtle);
+}
+
+.lock-submit-btn {
+  position: absolute;
+  right: 4px;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-button);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: all var(--anim-fast);
+}
+
+.lock-submit-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.lock-hint-text {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.lock-bottom-bar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  color: var(--text-secondary);
+}
+
+.lock-tray-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: background var(--anim-fast);
+}
+
+.lock-tray-icon:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   DESKTOP ENVIRONMENT
+   ========================================================================== */
+#desktop-environment {
+  width: 100%;
+  height: 100%;
+}
+
+#wallpaper-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: background 300ms ease;
+  z-index: 1;
+}
+
+/* Authentic Wallpapers */
+.wallpaper-aizen {
+  background: url('/wallpaper.png') no-repeat center center / cover;
+}
+
+.wallpaper-mica-slate {
+  background: radial-gradient(circle at 20% 20%, #1f2530 0%, #111419 60%, #0a0c0f 100%);
+}
+
+.wallpaper-azure-dusk {
+  background: radial-gradient(circle at 75% 25%, #18283b 0%, #0d1622 55%, #070b11 100%);
+}
+
+.wallpaper-nordic-forest {
+  background: radial-gradient(circle at 30% 70%, #162622 0%, #0d1715 50%, #060b0a 100%);
+}
+
+.wallpaper-minimal-abyss {
+  background: linear-gradient(135deg, #18191d 0%, #121316 50%, #0b0c0d 100%);
+}
+
+/* Subtle wallpaper geometric ambient depth */
+#wallpaper-layer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Desktop Grid */
+.desktop-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--taskbar-height);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 6px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.desktop-icon {
+  width: 82px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 4px;
+  border-radius: var(--radius-card);
+  border: 1px solid transparent;
+  gap: 5px;
+  transition: background var(--anim-fast), border-color var(--anim-fast);
+  user-select: none;
+}
+
+.desktop-icon:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.desktop-icon.selected {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.desktop-icon-svg {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.4));
+  pointer-events: none;
+}
+
+.desktop-icon-label {
+  font-size: 11px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+  pointer-events: none;
+}
+
+/* Rubberband Selection Box */
+.rubberband-box {
+  position: absolute;
+  border: 1px solid rgba(0, 120, 212, 0.8);
+  background-color: rgba(0, 120, 212, 0.2);
+  pointer-events: none;
+  z-index: 99;
+}
+
+/* Workspace Window Layer */
+.window-workspace {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: var(--taskbar-height);
+  z-index: 10;
+  pointer-events: none;
+}
+
+.window-workspace > * {
+  pointer-events: auto;
+}

@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Large test assets (>100MB cannot be pushed to GitHub)
+testfile.org-5GB.dat
+
+# Build outputs and packaged executables
+dist/
+dist-electron/
+build-exe/
+NullOS-app/
+NullOS-dist/
+release/
+
+# Logs and environment
+*.log
+.env
+.env.local
+
+# OS generated files
+.DS_Store
+Thumbs.db

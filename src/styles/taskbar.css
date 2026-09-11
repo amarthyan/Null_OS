@@ -1,0 +1,180 @@
+/* ==========================================================================
+   TASKBAR & SYSTEM TRAY
+   ========================================================================== */
+.taskbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--taskbar-height);
+  background-color: var(--bg-acrylic-heavy);
+  backdrop-filter: blur(24px) saturate(140%);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+  z-index: 1000;
+  user-select: none;
+}
+
+/* Left / Center Application Section */
+.taskbar-apps-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 100%;
+}
+
+.taskbar-item {
+  position: relative;
+  width: 40px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-button);
+  background: transparent;
+  color: var(--text-primary);
+  transition: background var(--anim-fast);
+  cursor: default;
+}
+
+.taskbar-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.taskbar-item:active {
+  background: rgba(255, 255, 255, 0.05);
+  transform: scale(0.96);
+}
+
+.taskbar-item.active {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.taskbar-item.focused {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Running App Indicator Pill */
+.taskbar-indicator {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background-color: var(--text-muted);
+  transition: all var(--anim-fast);
+}
+
+.taskbar-item.focused .taskbar-indicator {
+  width: 16px;
+  background-color: var(--accent);
+}
+
+.taskbar-item svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Search Bar on Taskbar */
+.taskbar-search-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-right: 4px;
+  transition: all var(--anim-fast);
+}
+
+.taskbar-search-btn:hover {
+  background: rgba(255, 255, 255, 0.09);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.taskbar-search-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* System Tray Section */
+.taskbar-tray {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  gap: 2px;
+}
+
+.tray-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: var(--radius-button);
+  transition: background var(--anim-fast);
+  cursor: default;
+  color: var(--text-secondary);
+}
+
+.tray-group:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-primary);
+}
+
+.tray-group svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Clock & Date Area */
+.tray-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  height: 36px;
+  padding: 0 8px;
+  border-radius: var(--radius-button);
+  font-size: 11px;
+  line-height: 1.25;
+  color: var(--text-primary);
+  transition: background var(--anim-fast);
+  cursor: default;
+}
+
+.tray-clock:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.tray-clock-time {
+  font-weight: 500;
+}
+
+.tray-clock-date {
+  color: var(--text-secondary);
+  font-size: 10px;
+}
+
+/* Extreme Right Desktop Peek Strip */
+.taskbar-peek {
+  width: 6px;
+  height: 100%;
+  border-left: 1px solid var(--border-subtle);
+  margin-left: 2px;
+  cursor: default;
+}
+
+.taskbar-peek:hover {
+  background: rgba(255, 255, 255, 0.15);
+}

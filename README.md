@@ -2,102 +2,124 @@
 
 
 
-# [Project Name] 🎯
+# Null Launcher 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: AIZEN
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Team Lead: [Amarthyan s s] - [SNMIMT]
+- Member 1: [Amarthyan s s] - [SNMIMT]
+- Member 2: [Suryakrishna T U] - [SNMIMT]
 
 ### Project Description
-[2-3 lines about what your project does]
+Null Launcher (NullOS) is a high-fidelity, satirical desktop operating system simulation crafted with modern glassmorphism aesthetics, a multi-tasking window manager, procedural audio synthesis, a real-time uselessness telemetry engine, an extensible developer platform, and a sprawling ecosystem of purposefully useless applications. It delivers the authentic look and feel of an enterprise workstation OS—complete with a login screen, security center, system monitor, interactive developer console, application permissions subsystem, and hardware stress testing suite—dedicated entirely to wasting time with unmatched style.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Modern operating systems are burdened with excessive productivity tools, workflow optimizations, and focus features that relentlessly distract humans from the fine art of doing absolutely nothing. Society was in desperate need of an operating system engineered specifically to guarantee 0% productivity while consuming actual compute resources to do nothing with maximum corporate elegance.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+Null Launcher provides a revolutionary desktop experience where users can authenticate into a corporate workstation, manage multi-window desktop workflows, browse an App Store of 20+ completely useless apps (like Rock Simulator, Mouse Tester, and Air Manager), track their asymptotic Uselessness Score (99.99%), trigger procedural audio feedback, and spin up an actual multi-threaded hardware stress engine that pins 500 MB of physical RAM and taxes CPU cores—just to achieve peak inefficiency.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- Languages: JavaScript (ES6+), C#, PowerShell, Bash, HTML5, CSS3
+- Frameworks: Electron (Desktop Shell)
+- Libraries: Web Audio API (real-time procedural audio synthesis, 0 external audio files)
+- Tools: Vite 6, npm, Electron Packager, Git
 
 For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+- Main Components: Any modern PC / Laptop workstation (x86/x64 architecture)
+- Specifications: Multi-core CPU, 500 MB+ RAM for the native hardware stress engine
+- Tools Required: Modern Web Browser (Chrome, Edge, Firefox) or Windows Desktop Environment
 
 ### Implementation
 For Software:
+
 # Installation
-[commands]
+```bash
+# Clone the repository
+git clone https://github.com/amarthyan/command.git
+cd command
+
+# Install dependencies
+npm install
+```
 
 # Run
-[commands]
+```bash
+# Option 1: Run as Web Application (Dev Mode)
+npm run dev
+
+# Option 2: Run as Desktop Application (Electron)
+npm start
+
+# Option 3: One-Click Desktop Launcher (Windows - with Hardware Stress Engine)
+Launch_NullOS.bat
+```
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+![Desktop Environment](public/wallpaper.png)
+*NullOS Desktop Environment featuring custom wallpaper, Start Menu, Taskbar, and Glassmorphism UI*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+![App Store & System Monitor](public/wallpaper.png)
+*NullOS App Store featuring 20+ intentionally useless apps and real-time System Monitor*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Security Center & Terminal](public/wallpaper.png)
+*Enterprise Security Center with Productivity Guard and interactive Terminal CLI*
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+```
+┌──────────────────────────────────────────────────────────┐
+│                   NullOS Desktop Shell                   │
+│   (Lock Screen / Auth / Start Menu / Taskbar / Windows)  │
+└────────────────────────────┬─────────────────────────────┘
+                             │
+       ┌─────────────────────┼─────────────────────┐
+       ▼                     ▼                     ▼
+┌──────────────┐      ┌──────────────┐      ┌──────────────┐
+│  Uselessness │      │   Web Audio  │      │  App Store   │
+│   Telemetry  │      │  Procedural  │      │ & Permission │
+│    Engine    │      │  Synthesizer │      │  Subsystem   │
+└──────┬───────┘      └──────────────┘      └──────────────┘
+       │
+       ▼
+┌──────────────────────────────────────────────────────────┐
+│             Real Hardware Stress Engine                  │
+│  (Multi-threaded CPU Worker Threads & 500 MB RAM Buffer) │
+└──────────────────────────────────────────────────────────┘
+```
+*Architecture and workflow diagram of Null Launcher desktop subsystems*
 
 For Hardware:
 
 # Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+*N/A - Null Launcher is a software-based desktop operating system simulation.*
 
 # Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
+*N/A - Software-based project.*
 
 ### Project Demo
 # Video
 [Add your demo video link here]
-*Explain what the video demonstrates*
+*Demonstration of Null Launcher boot sequence, window management, App Store, procedural audio chimes, and hardware stress engine*
 
 # Additional Demos
-[Add any extra demo materials/links]
+- Web Browser Mode: Run locally via `npm run dev` at `http://localhost:3000`
+- Native Executable: `NullOS.exe` (Standalone Windows Launcher)
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Amarthyan s s]: OS architecture, Electron desktop runtime, window manager, procedural Web Audio engine, hardware stress engine, and core apps.
+- [Suryakrishna T U]: UI glassmorphism design tokens, App Store catalog design, review ecosystem, and testing.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
 
 ![Static Badge](https://img.shields.io/badge/TinkerHub-24?color=%23000000&link=https%3A%2F%2Fwww.tinkerhub.org%2F)
 ![Static Badge](https://img.shields.io/badge/UselessProjects--26-26?link=https%3A%2F%2Ftinkerhub.org%2Fevents%2F1M8ORET9A1%2Fuseless-projects-3.0)
-
-
-
