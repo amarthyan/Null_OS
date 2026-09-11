@@ -1,15 +1,10 @@
 # Dependencies
 node_modules/
 
-# Large test assets (>100MB cannot be pushed to GitHub)
-testfile.org-5GB.dat
-
-# Build outputs and packaged executables
-dist/
-dist-electron/
-build-exe/
+# Packaged standalone binaries (>100MB cannot be pushed to GitHub)
 NullOS-app/
-NullOS-dist/
+build-exe/
+dist-electron/
 release/
 
 # Logs and environment

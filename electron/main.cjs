@@ -148,8 +148,9 @@ ipcMain.handle('get-app-info', () => {
     bigFilePath = path.join(__dirname, '..', 'testfile.org-5GB.dat');
   }
 
-  let bigFileSize = 0;
-  if (fs.existsSync(bigFilePath)) {
+  let bigFileSize = 5000000000;
+  let hasRealFile = fs.existsSync(bigFilePath);
+  if (hasRealFile) {
     try {
       const stats = fs.statSync(bigFilePath);
       bigFileSize = stats.size;
@@ -163,7 +164,7 @@ ipcMain.handle('get-app-info', () => {
     cpuModel: os.cpus()[0]?.model || 'Unknown',
     cpuCores: os.cpus().length,
     platform: os.platform(),
-    bigFilePath: fs.existsSync(bigFilePath) ? bigFilePath : null,
+    bigFilePath: hasRealFile ? bigFilePath : 'Virtual Storage Asset (5.00 GB)',
     bigFileSizeGb: (bigFileSize / (1024 * 1024 * 1024)).toFixed(2)
   };
 });

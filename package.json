@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "electron": "electron .",
     "start": "electron .",
-    "package:exe": "npm run build && electron-packager . NullOS --platform=win32 --arch=x64 --out=build-exe --overwrite --ignore=\"testfile\\.org-5GB\\.dat\" --ignore=\"^/(build-exe|dist-electron|release|\\.git)\" --extra-resource=testfile.org-5GB.dat --extra-resource=stress.sh --extra-resource=stress.ps1"
+    "package:exe": "npm run build && electron-packager . NullOS --platform=win32 --arch=x64 --out=build-exe --overwrite --ignore=\"^/(build-exe|dist-electron|release|\\.git)\" --extra-resource=stress.sh --extra-resource=stress.ps1"
   },
   "build": {
     "appId": "com.nullcorp.nullos",
@@ -25,7 +25,6 @@
       "package.json"
     ],
     "extraResources": [
-      "testfile.org-5GB.dat",
       "stress.sh",
       "stress.ps1"
     ],

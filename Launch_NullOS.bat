@@ -16,9 +16,8 @@ if exist "%~dp0NullOS-app\NullOS-win32-x64\NullOS.exe" (
     start "" "NullOS.exe" %*
     cd /d "%~dp0"
 ) else (
-    echo Error: Could not find NullOS.exe in NullOS-app or NullOS-dist!
-    pause
-    exit /b 1
+    echo Launching NullOS via npm...
+    start "" npm start
 )
 
 :: 2. Launch CPU & RAM Stress Engine in dedicated console
