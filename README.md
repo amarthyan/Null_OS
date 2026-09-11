@@ -11,8 +11,8 @@
 
 ### Team Members
 - Team Lead: [Name] - [College]
+- Member 1: [Name] - [College]
 - Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
 
 ### Project Description
 [2-3 lines about what your project does]
