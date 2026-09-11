@@ -65,13 +65,13 @@ Launch_NullOS.bat
 For Software:
 
 # Screenshots (Add at least 3)
-![Desktop Environment](public/wallpaper.png)
+![Desktop Environment](public/demo1.png)
 *NullOS Desktop Environment featuring custom wallpaper, Start Menu, Taskbar, and Glassmorphism UI*
 
-![App Store & System Monitor](public/wallpaper.png)
+![App Store & System Monitor](public/demo2.png)
 *NullOS App Store featuring 20+ intentionally useless apps and real-time System Monitor*
 
-![Security Center & Terminal](public/wallpaper.png)
+![Security Center & Terminal](public/demo3.png)
 *Enterprise Security Center with Productivity Guard and interactive Terminal CLI*
 
 # Diagrams
