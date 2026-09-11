@@ -2,7 +2,7 @@
 
 
 
-# Null Launcher 🎯
+# Null OS 🎯
 
 
 ## Basic Details
@@ -69,10 +69,10 @@ For Software:
 *NullOS Desktop Environment featuring custom wallpaper, Start Menu, Taskbar, and Glassmorphism UI*
 
 ![App Store & System Monitor](public/demo2.png)
-*NullOS App Store featuring 20+ intentionally useless apps and real-time System Monitor*
+*NullOS browser and Search result*
 
 ![Security Center & Terminal](public/demo3.png)
-*Enterprise Security Center with Productivity Guard and interactive Terminal CLI*
+*NullOS task manager and system monitor*
 
 # Diagrams
 ```
